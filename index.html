@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>12ё анги | Хөгжил цогцолбор сургууль</title>
+  <meta name="description" content="Хөгжил цогцолбор сургуулийн 2021–2024 оны ангийн дурсамжийн digital yearbook" />
+  <meta property="og:title" content="12ё анги | Хөгжил цогцолбор сургууль" />
+  <meta property="og:description" content="Нэг анги. Мянган дурсамж." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b0a1a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=Unbounded:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav" aria-label="Үндсэн цэс">
+    <div class="nav-inner">
+      <a href="#top" class="logo" aria-label="Нүүр хуудас">12<b>Ё</b></a>
+      <ul class="nav-links" id="navLinks"></ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Цэс нээх" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="top">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-content">
+        <p class="hero-kicker" id="heroKicker"></p>
+        <h1 id="heroTitle"></h1>
+        <span class="gold-rule"></span>
+        <p class="hero-sub" id="heroSub"></p>
+        <p class="hero-text" id="heroText"></p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#students">Ангийнхантай танилцах</a>
+          <a class="btn" href="#memories">Дурсамжаа үзэх</a>
+          <a class="btn" href="#reunion">Уулзалтад бүртгүүлэх</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Доош гүйлгэх">Гүйлгэх</a>
+    </header>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <span class="eyebrow">Бидний тухай</span>
+          <h2 class="section-title" style="text-align:left;" id="aboutTitle"></h2>
+          <span class="gold-rule" style="margin-left:0;"></span>
+          <div id="aboutParagraphs"></div>
+          <div class="about-stats" id="aboutStats"></div>
+        </div>
+        <figure class="about-quote reveal" id="aboutQuote"></figure>
+      </div>
+    </section>
+
+    <section id="teacher" class="teacher">
+      <div class="t-beam" aria-hidden="true"></div>
+      <div class="container t-grid">
+        <div class="t-stage reveal" id="tStage">
+          <div class="t-orbit" aria-hidden="true"></div>
+          <div class="t-float">
+            <div class="t-frame">
+              <div class="t-photo"><img id="tImg" src="images/teacher.jpg" alt="12ё ангийн багш Д. Болорцэцэг" decoding="async" /><span class="t-sheen"></span></div>
+              <i class="t-spark s1"></i><i class="t-spark s2"></i><i class="t-spark s3"></i><i class="t-spark s4"></i><i class="t-spark s5"></i><i class="t-spark s6"></i>
+            </div>
+          </div>
+        </div>
+        <div class="t-text reveal">
+          <span class="eyebrow">Ангийн багш</span>
+          <h2 class="t-name">Д. Болорцэцэг</h2>
+          <div class="gold-rule" style="margin:1.1rem 0 1.4rem"></div>
+          <ul class="t-roles"><li>12ё ангийн багш</li><li>Монгол хэл</li><li>Уран зохиол</li><li>Үндэсний бичиг</li></ul>
+          <p class="t-quote">Бидний анхны алхмыг хамт алхаж, зам заасан багшдаа — баярлалаа.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="students" class="section-alt">
+      <div class="container">
+        <span class="eyebrow">33 сурагч</span>
+        <h2 class="section-title">Ангийнхан</h2>
+        <p class="lead">Хүн бүрийг зураг дээр нь дарж дэлгэрэнгүй танилцаарай.</p>
+        <div class="toolbar">
+          <label class="search-wrap">
+            <span class="visually-hidden">Хайх</span>
+            <input type="search" id="studentSearch" placeholder="Нэр, хоч, онцлогоор хайх" autocomplete="off" />
+          </label>
+        </div>
+        <p class="count-label" id="studentCount" aria-live="polite"></p>
+        <div class="students" id="studentGrid"></div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <span class="eyebrow">Зургийн цомог</span>
+        <h2 class="section-title">Хуучин дурсамжууд</h2>
+        <p class="lead">Ангилалаар шүүж, зураг дээр дарж томруулна уу.</p>
+        <div class="chips" id="galleryFilters" role="toolbar" aria-label="Ангилал"></div>
+        <div class="masonry" id="galleryGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="videos" class="section-alt">
+      <div class="container">
+        <span class="eyebrow">Видео дурсамж</span>
+        <h2 class="section-title">Хөдөлгөөнт дурсамжууд</h2>
+        <p class="lead">Видео бүрийг дарж үзэх боломжтой.</p>
+        <div class="videos" id="videoGrid"></div>
+      </div>
+    </section>
+
+    <section id="memories">
+      <div class="container">
+        <span class="eyebrow">Дурсамжийн хана</span>
+        <h2 class="section-title">Ангийн сэтгүүл</h2>
+        <p class="lead">Ангийнхны бичсэн дурсамжууд нэг дор.</p>
+        <div class="wall" id="memoryWall"></div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section-alt">
+      <div class="container">
+        <span class="eyebrow">Цаг хугацааны шугам</span>
+        <h2 class="section-title">Анги хамтдаа явсан түүх</h2>
+        <ol class="timeline" id="timelineList"></ol>
+      </div>
+    </section>
+
+    <section id="reunion" class="reunion">
+      <div class="container">
+        <span class="eyebrow">Уулзалт</span>
+        <h2 class="section-title">ДАХИН НЭГДЭЦГЭЭЕ</h2>
+        <div class="reunion-meta" id="reunionMeta"></div>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="cd-box"><div class="cd-num" id="cdD">--</div><div class="cd-label">Өдөр</div></div>
+          <div class="cd-box"><div class="cd-num" id="cdH">--</div><div class="cd-label">Цаг</div></div>
+          <div class="cd-box"><div class="cd-num" id="cdM">--</div><div class="cd-label">Минут</div></div>
+          <div class="cd-box"><div class="cd-num" id="cdS">--</div><div class="cd-label">Секунд</div></div>
+        </div>
+
+        
+        <div class="map-card" id="mapCard">
+          <h3>Уулзалтын байршил</h3>
+          <p class="map-addr" id="mapAddr"></p>
+          <div class="map-frame">
+            <iframe id="mapFrame" title="Google газрын зураг" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <a class="btn" id="mapLink" href="#" target="_blank" rel="noopener">Google Maps дээр нээх</a>
+        </div>
+
+        <div class="reunion-form-wrap">
+          <div id="rsvpFormArea">
+            <h3>Та оролцох уу?</h3>
+            <p class="lead">Сонголтоо илгээгээд уулзалтын мэдээллийг хүлээн авна уу.</p>
+            <form id="rsvpForm" novalidate>
+              <div class="field" data-field="name">
+                <label for="rsvpName">Овог нэр <span aria-hidden="true">*</span></label>
+                <input id="rsvpName" name="name" type="text" maxlength="60" autocomplete="name" />
+                <span class="field-error" data-error></span>
+              </div>
+              <div class="field" data-field="email">
+                <label for="rsvpEmail">Имэйл (заавал биш)</label>
+                <input id="rsvpEmail" name="email" type="email" maxlength="80" autocomplete="email" />
+                <span class="field-error" data-error></span>
+              </div>
+              <fieldset class="field" data-field="status" style="border:0; padding:0;">
+                <legend style="font-size:0.8rem; margin-bottom:0.2rem;">Сонголт <span aria-hidden="true">*</span></legend>
+                <div class="radio-group">
+                  <label><input type="radio" name="status" value="ATTENDING" /> Оролцоно</label>
+                  <label><input type="radio" name="status" value="MAYBE" /> Магадгүй</label>
+                  <label><input type="radio" name="status" value="NOT_ATTENDING" /> Оролцохгүй</label>
+                </div>
+                <span class="field-error" data-error></span>
+              </fieldset>
+              <div class="field-row">
+                <div class="field" data-field="guests">
+                  <label for="rsvpGuests">Зочдын тоо (0–5)</label>
+                  <input id="rsvpGuests" name="guests" type="number" min="0" max="5" value="0" />
+                  <span class="field-error" data-error></span>
+                </div>
+                <div class="field" data-field="phone">
+                  <label for="rsvpPhone">Утас (заавал биш)</label>
+                  <input id="rsvpPhone" name="phone" type="text" maxlength="20" autocomplete="tel" />
+                  <span class="field-error" data-error></span>
+                </div>
+              </div>
+              <div class="field" data-field="message">
+                <label for="rsvpMessage">Ангийнханд бичих үг</label>
+                <textarea id="rsvpMessage" name="message" maxlength="300"></textarea>
+                <span class="field-error" data-error></span>
+              </div>
+              <button class="btn btn-solid" type="submit" style="width:100%;">Илгээх</button>
+            </form>
+            <div class="rsvp-stats" id="rsvpStats"></div>
+            <p class="rsvp-note">Сонголтууд зөвхөн таны хөтөч дээр хадгалагдана.</p>
+          </div>
+          <div id="rsvpSuccess" class="form-success hidden" role="status">
+            <h4>Баярлалаа!</h4>
+            <p id="rsvpSuccessText"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#top" class="logo" id="footerLogo"></a>
+    <p id="footerTagline"></p>
+    <small id="footerYear"></small>
+  </footer>
+
+  <!-- Сурагчийн modal -->
+  <div class="overlay" id="studentModal" role="dialog" aria-modal="true" aria-labelledby="profileName" aria-hidden="true">
+    <div class="panel">
+      <button class="close" data-close aria-label="Хаах">×</button>
+      <div class="profile" id="profileBody"></div>
+      <div class="profile-nav">
+        <button class="btn btn-ghost-navy btn-sm" id="profilePrev">← Өмнөх</button>
+        <button class="btn btn-ghost-navy btn-sm" id="profileNext">Дараах →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Зургийн lightbox -->
+  <div class="overlay lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Зураг" aria-hidden="true">
+    <button class="close" data-close aria-label="Хаах">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Өмнөх зураг">‹</button>
+    <div class="lb-stage">
+      <div class="lb-frame" id="lbFrame"></div>
+      <p class="lb-caption" id="lbCaption"></p>
+      <span class="lb-counter" id="lbCounter"></span>
+    </div>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Дараагийн зураг">›</button>
+  </div>
+
+  <!-- Видео modal -->
+  <div class="overlay" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoTitle" aria-hidden="true">
+    <div class="panel video-modal">
+      <button class="close" data-close aria-label="Хаах">×</button>
+      <h2 id="videoTitle"></h2>
+      <p class="video-desc" id="videoDesc"></p>
+      <div class="player" id="player">
+        <video id="videoEl" preload="metadata" playsinline></video>
+        <div class="player-error">Видеог ачаалж чадсангүй. Файлын нэрийг шалгана уу.</div>
+      </div>
+      <div class="controls">
+        <button class="ctrl-btn" id="playBtn" aria-label="Тоглуулах">
+          <svg id="iconPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="iconPause" viewBox="0 0 24 24" class="hidden"><path d="M6 19h4V5H6zm8-14v14h4V5z"/></svg>
+        </button>
+        <span class="time" id="timeLabel">0:00 / 0:00</span>
+        <input type="range" class="progress" id="seek" min="0" max="100" step="0.1" value="0" aria-label="Цаг хайх" />
+        <button class="ctrl-btn" id="muteBtn" aria-label="Дуу хаах">
+          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+        </button>
+        <input type="range" class="volume" id="volume" min="0" max="1" step="0.05" value="1" aria-label="Дууны түвшин" />
+        <button class="ctrl-btn" id="fullscreenBtn" aria-label="Бүтэн дэлгэц">
+          <svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="Дээш буцах"></button>
+  <div id="toasts" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
